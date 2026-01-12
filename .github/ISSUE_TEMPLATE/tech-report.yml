@@ -1,0 +1,38 @@
+name: Technical Issue Report
+description: Use this to log a new hardware or software problem.
+title: "[Issue]: "
+labels: ["triage"]
+body:
+  - type: input
+    id: office
+    attributes:
+      label: Office Name
+      placeholder: e.g., North Branch, Main Hub
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device/Asset ID
+      placeholder: e.g., Dell Laptop #12, HP Printer
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of Issue
+      options:
+        - Hardware
+        - Software/App
+        - Network/Internet
+        - Password/Access
+        - Database
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: Staff Comments
+      placeholder: Please describe what happened...
+    validations:
+      required: true
