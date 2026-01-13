@@ -1,12 +1,12 @@
-name: PTS Technical Issue Report
-description: Log a new issue for the PTS Monitoring System.
+name: PTS NDL Issue Report
+description: Log a new.
 title: "[ISSUE]: "
 labels: ["Todo"]
 body:
   - type: dropdown
     id: tse_name
     attributes:
-      label: TSE Name
+      label: TSE
       options:
         - Abubakar Babangida
         - Amanwa Nicholas
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Staff Email Address
       description: We will send status updates to this email.
-      placeholder: name@company.com
+      placeholder: name@puretechnicalservices.net
     validations:
       required: true
   - type: input
