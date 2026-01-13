@@ -1,38 +1,67 @@
-name: Technical Issue Report
-description: Use this to log a new hardware or software problem.
-title: "[Issue]: "
-labels: ["triage"]
+name: PTS Technical Issue Report
+description: Log a new issue for the PTS Monitoring System.
+title: "[ISSUE]: "
+labels: ["Todo"]
 body:
-  - type: input
-    id: office
+  - type: dropdown
+    id: tse_name
     attributes:
-      label: Office Name
-      placeholder: e.g., North Branch, Main Hub
+      label: TSE Name
+      options:
+        - Abubakar Babangida
+        - Amanwa Nicholas
+        - Kamo Lanshima
+        - Babatunde Olorunyomi
+        - Rekus Friday
+        - Abiem Chianen Samuel
+        - Murtala Othman
+        - Essien Jude Edem
+        - Muazu Yahaya
+        - Oluwaseyi Isaac
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Staff Email Address
+      description: We will send status updates to this email.
+      placeholder: name@company.com
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: Region
+    validations:
+      required: true
+  - type: input
+    id: Centre
+    attributes:
+      label: Center
     validations:
       required: true
   - type: input
     id: device
     attributes:
-      label: Device/Asset ID
-      placeholder: e.g., Dell Laptop #12, HP Printer
+      label: Device/Asset Type
     validations:
       required: true
   - type: dropdown
-    id: type
+    id: grouping
     attributes:
-      label: Type of Issue
+      label: Grouping of Issue
       options:
         - Hardware
-        - Software/App
-        - Network/Internet
-        - Password/Access
+        - Software
+        - Network
         - Database
+        - Office Infrastructure
     validations:
       required: true
   - type: textarea
     id: comment
     attributes:
-      label: Staff Comments
-      placeholder: Please describe what happened...
+      label: Detailed Comments
+      placeholder: Describe the issue in detail...
     validations:
       required: true
