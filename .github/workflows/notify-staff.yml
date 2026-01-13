@@ -16,13 +16,13 @@ jobs:
           EMAIL=$(echo "${{ github.event.issue.body }}" | grep -oE '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')
           echo "staff_email=$EMAIL" >> $GITHUB_OUTPUT
 
-      - name: Send Progress Email
+      - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{secrets.MAIL_USERNAME}}
-          password: ${{secrets.MAIL_PASSWORD}}
+          server_address: ${{ secrets.MAIL_HOST }}
+          server_port: ${{ secrets.MAIL_PORT }}
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
           subject: "PTS Update: Issue is now ${{ github.event.label.name }}"
           to: ${{ steps.get_email.outputs.staff_email }}
           from: PTS Monitoring System
